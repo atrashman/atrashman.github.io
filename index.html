@@ -1,0 +1,125 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:Untitled</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<p><h1>python一行代码解决问题<h1></p>
+<p><font face='kaiti' size=5 style='line-height:1.5'>
+   <p>先来个简单的,1 - 20 的偶数的列表<p> </p>
+<pre><code class="lang-python">[i for i in range(2,21,2)]
+</code></pre>
+<pre><code>[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+</code></pre><font face='kaiti' size=5 style='line-height:1.5'>
+
+<p>对自己任给的一个整数，求出其各位数字，并生成元组。
+<br>这次我们定义一个函数，直接用return语句，也算是一行代码解决了</p>
+<pre><code class="lang-python">def kk(num):
+    return tuple(map(lambda x:int(x),str(num)));
+#测试一下：
+kk(1212121)
+</code></pre>
+<pre><code>(1, 2, 1, 2, 1, 2, 1)
+</code></pre><font face='kaiti' size=5 style='line-height:1.5'>
+
+<p>用map()函数或列表推导式计算下列级数的和。<p>
+$ \sum_{n=1}^{100}(-1)^{n+1}\frac1n$</p>
+<pre><code class="lang-python">sum([1/i*((-1)**(i+1)) for i in range(1,101)])
+</code></pre>
+<pre><code>0.688172179310195
+</code></pre><font face='kaiti' size=5 style='line-height:1.5'>
+
+<p>Python的内置函数和列表的方法中都没有提供求中位数的函数。对任意输入的数值列表（自己给定），输出这个序列的中位数。</p>
+<pre><code class="lang-python">def middle_num(num_list):
+    return len(num_list)%2==0 and \
+    (sorted(num_list)[len(num_list)//2-1]+sorted(num_list)[len(num_list)//2-1])/2 or \
+    sorted(num_list)[len(num_list//2)]
+    #小小测试一下
+middle_num([1,23,21,2,31,12])
+</code></pre>
+<pre><code>12.0
+</code></pre><p><strong><em>这段代码说明一下：</em></strong>
+...and...or...可以代替c++的条件表达式，不知道条件表达式的同学自行百度</p>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>
